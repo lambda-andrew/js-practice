@@ -13,3 +13,12 @@ At the end of the project, you should have a console full of correct responses t
 Test your knowledge of objects and arrays.
 
 - [ ] Use the [objects-arrays.js](challenges/objects-arrays.js) link to get started. Read the instructions carefully!
+
+## Task 2: Prototypes
+Create constructors, bind methods, and create a Star Wars game!
+* [ ] Use the [prototypes.js](challenges/prototypes.js) link to get started. Read the instructions carefully!
+
+## Task 3: Classes
+Once you have completed the prototypes challenge, it's time to convert all your hard work into classes.
+* [ ] Use the [classes.js](challenges/classes.js) link to get started. Read the instructions carefully!
+
