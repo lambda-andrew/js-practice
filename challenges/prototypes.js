@@ -1,15 +1,15 @@
 /*
-  Object oriented design is commonly used in video games.  
+  Object oriented design is commonly used in video games.
   For this part of the assignment you will be implementing several constructor functions with their correct inheritance hierarchy.
 
-  In this file you will be creating three constructor functions: GameObject, CharacterStats, Characters.  
+  In this file you will be creating three constructor functions: GameObject, CharacterStats, Characters.
 
-  At the bottom of this file are 3 objects that all end up inheriting from Characters.  
+  At the bottom of this file are 3 objects that all end up inheriting from Characters.
   Use the objects at the bottom of the page to test your constructor functions.
-  
+
   Each constructor function has unique properties and methods that are defined in their block comments below:
 */
-  
+
 /*
   === GameObject ===
   * name
@@ -33,7 +33,7 @@
   * should inherit destroy() from GameObject through CharacterStats
   * should inherit takeDamage() from CharacterStats
 */
- 
+
 /*
   * Inheritance chain: GameObject -> CharacterStats -> Character
   * Instances of Character should have all of the same properties as CharacterStats and GameObject.
@@ -42,7 +42,42 @@
 
 // Test you work by un-commenting these 3 objects and the list of console logs below:
 
-/*
+
+function GameObject(gameAtt){
+  this.name = gameAtt.name;
+  this.dimensions = gameAtt.dimensions;
+}
+
+GameObject.prototype.destroy = function(){
+  return `${this.name} was removed from the game.`
+}
+
+CharacterStats.prototype = Object.create(GameObject.prototype);
+
+function CharacterStats(charAtt){
+  GameObject.call(this, charAtt);
+  this.healthPoints = charAtt.healthPoints;
+}
+
+CharacterStats.prototype.takeDamage = function(){
+  return `${this.name} took damage.`;
+}
+
+Character.prototype = Object.create(CharacterStats.prototype);
+
+function Character(attributes){
+  CharacterStats.call(this, attributes);
+  this.side = attributes.side;
+  this.weapons = attributes.weapons;
+  this.language = attributes.language;
+  this.team = attributes.team;
+}
+
+Character.prototype.greet = function(){
+  return `${this.name} offers a greeting in ${this.language}.`;
+}
+
+
   const jedi = new Character({
     dimensions: {
       height: 172,
@@ -86,21 +121,21 @@
     language: 'Common Tongue',
   });
 
-  
 
-  
-  console.log(sith.dimensions); 
-  console.log(robot.healthPoints); 
-  console.log(jedi.name); 
-  console.log(robot.team); 
-  console.log(jedi.weapons); 
-  console.log(sith.language); 
-  console.log(sith.greet()); 
-  console.log(jedi.takeDamage()); 
-  console.log(robot.destroy()); 
-*/
 
-  // Stretch task: 
-  // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.  
+
+  console.log(sith.dimensions);
+  console.log(robot.healthPoints);
+  console.log(jedi.name);
+  console.log(robot.team);
+  console.log(jedi.weapons);
+  console.log(sith.language);
+  console.log(sith.greet());
+  console.log(jedi.takeDamage());
+  console.log(robot.destroy());
+
+
+  // Stretch task:
+  // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.
   // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
   // * Create two new objects, one a villain and one a hero and fight it out with methods!
