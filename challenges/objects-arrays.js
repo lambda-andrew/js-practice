@@ -1,8 +1,31 @@
 // ==== Objects ====
 
-/* 
+/*
   Create four objects using the following information (name, height, hair_color, eye_color)
 */
+const luke = ({
+  name: "Luke",
+  height: 172,
+  hairColor: "blond",
+  eyeColor: "blue",
+  whine: function(){
+    return `But I was going into Tosche Station to pick up some power converters!`;
+  }
+});
+
+const c3po = ({
+  name: "C-3PO",
+  height: 167,
+  hairColor: "n/a",
+  eyeColor: "yellow"
+});
+
+const biggs = ({
+  name: "Biggs",
+  height: 183,
+  hairColor: "black",
+  eyeColor: "brown"
+});
 
 // Luke, 172, blond, blue
 
@@ -13,19 +36,19 @@
 // Using your character objects, log answers to these questions:
 
 // How tall is Luke?
-console.log();
+console.log(luke.height);
 
 // What color are Biggs's eyes?
-console.log();
+console.log(biggs.eyeColor);
 
 // What is C-3PO's hair color?
-console.log();
+console.log(c3po.hairColor);
 
 // What color are Luke's eyes?
-console.log();
+console.log(luke.eyeColor);
 
 // Create a new whine method for Luke.  When called, return "But I was going into Tosche Station to pick up some power converters!" Log the result.
-console.log();
+console.log(luke.whine());
 
 // ==== Arrays ====
 
@@ -134,16 +157,16 @@ characters = [
   }
 ];
 
-/* Request 1: Create a new array called nonHumans that contains all the characters that have "n/a" as a gender.  
+/* Request 1: Create a new array called nonHumans that contains all the characters that have "n/a" as a gender.
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 const nonHumans = [];
 //your function here
 console.log(nonHumans);
 
-/* Request 2: Create a new array called nameAge that contains both first name and birth year of each character. 
+/* Request 2: Create a new array called nameAge that contains both first name and birth year of each character.
 
-The resulting information should have a space between the first name and the birth year like this: 
+The resulting information should have a space between the first name and the birth year like this:
 Name birthYear
 
 Log the result of your new array. */
@@ -167,7 +190,7 @@ const nameMass = [];
 //use .forEach()
 console.log(nameMass);
 
-/* Request 2: .map()    
+/* Request 2: .map()
 
 Convert all the character names to lower case.  Create a new array named lowerCase and map over each name to convert them all to lower case.  Log the resut.
 
@@ -177,7 +200,7 @@ const lowerCase = [];
 //use .map()
 console.log(lowerCase);
 
-/* Request 3: .filter() 
+/* Request 3: .filter()
 
 Find out which characters have a mass less than 100.
 
@@ -186,7 +209,7 @@ const lightweights = [];
 //use .filter()
 console.log(lightweights);
 
-/* Request 4: .reduce() 
+/* Request 4: .reduce()
 
 If all the characters on the list got in a starship, what would their total weight be?  Find the total mass from all the characters using the .reduce() method.
 
@@ -195,7 +218,7 @@ const massTotal = 0;
 //use .reduce()
 console.log(massTotal);
 
-/* 
+/*
 
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
