@@ -54,7 +54,7 @@ console.log(luke.whine());
 
 // Given an array of Star Wars characters,  complete the following requests WITHOUT using any array methods like .forEach(), .map(), .reduce(), .filter()
 
-characters = [
+const characters = [
   {
     name: "Luke Skywalker",
     height: "172",
@@ -162,6 +162,12 @@ characters = [
 Once you have the new array created, sort the universities alphabetically and log the result. */
 const nonHumans = [];
 //your function here
+characters.filter(function(item){
+  if(item.gender === "n/a"){
+    nonHumans.push(item);
+    nonHumans.sort();
+  }
+});
 console.log(nonHumans);
 
 /* Request 2: Create a new array called nameAge that contains both first name and birth year of each character.
@@ -172,11 +178,23 @@ Name birthYear
 Log the result of your new array. */
 const nameAge = [];
 //your function here
+for(let i = 0; i < characters.length; i++){
+  nameAge.push(`${characters[i].name}, ${characters[i].birth_year}`);
+  nameAge.sort();
+}
 console.log(nameAge);
 
 /* Request 3: Find out how many characters have the string "Lars" included in their name. Create a new array called lars that contains them all. Log the result. */
 const lars = [];
 //your function here
+
+for(let i = 0; i < characters.length; i++){
+  if(characters[i].name.includes("Lars") === true){
+    lars.push(characters[i]);
+  }
+  }
+
+
 console.log(lars);
 
 // ==== ADVANCED Array Methods ====
